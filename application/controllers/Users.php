@@ -37,10 +37,8 @@ public function postWork(){
     $this->config->set_item('post',$post);
     $this->load->view('postwork',['post'=>$post,'categories'=> $categories]);
 
-
   }else{
     $this->find();
-
   }
 }
 
@@ -57,7 +55,12 @@ public function find(){
 }
 
 public function category($id){
-echo "<h1>$id</h1>";
+
+$this->load->model('queries');
+$c_name = $this->queries->getCName($id);
+$sections = $this->queries->getSections($id);
+$this->load->view('section',['cname'=>$c_name->c_name,'sections'=>$sections]);
+
 }
 
 public function loadPostWork(){

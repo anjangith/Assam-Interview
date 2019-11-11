@@ -17,7 +17,7 @@ class Ajax_pagination extends CI_Controller {
   $config = array();
   $config["base_url"] = "#";
   $config["total_rows"] = $this->ajax_pagination_model->count_all();
-  $config["per_page"] = 2;
+  $config["per_page"] = 4;
   $config["uri_segment"] = 3;
   $config["use_page_numbers"] = TRUE;
   $config['full_tag_open'] = "<ul class='pagination'>";
@@ -44,5 +44,4 @@ class Ajax_pagination extends CI_Controller {
   );
   echo json_encode($output);
  }
-
 }

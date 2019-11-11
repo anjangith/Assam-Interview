@@ -17,29 +17,22 @@ class Ajax_pagination_model extends CI_Model
   $this->db->limit($limit, $start);
   $query = $this->db->get();
   $output .= '
-  <div class="col">
+  <div class="col mt-3">
   <ul class="list-group">
   ';
   foreach($query->result() as $row)
   {
 
    $output .= '
+
    <li class="list-group-item d-flex justify-content-between align-items-center">
-   <img class="mt-4" src='.base_url('assets/images/user.png').' alt="Card image cap" width="50" height="50">
-  </li>
-   <li class="list-group-item d-flex justify-content-between align-items-center"><h3>
-    '.$row->name.'</h3>
-      <span class="text-primary ml-auto mt-2 mr-2">'.'<p>Ratings</p>'.'</span>
-    <span class="badge badge-primary badge-pill">'.$row->points.'</span>
-  </li>
+   <img class="mt-2" src='.base_url('assets/images/user.png').' alt="Card image cap" width="50" height="50">
 
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-  
-    <span class="text-primary ml-auto mt-2 mr-2">'.'<button class="btn btn-success">Profile</button>'.'</span>
- </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-
- </li>
+   <h5>
+    '.$row->name.'</h5>
+      <span class="text-primary ml-auto mt-2 mr-2">'.'<p>Points</p>'.'</span>
+    <span class="badge badge-primary badge-pill">'.$row->points.'</span>.<button class="btn btn-success ml-3">Profile</button>
+  </li>
    ';
   }
   $output .= '</ul></div>';

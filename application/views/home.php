@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col mt-4">
-      <h1 class="display-3">Welcome to A-Preparation</h1>
+      <h1 class="display-3">Welcome to Assam-Preparation</h1>
 			<blockquote class="blockquote">
   <p class="mb-0">Prepare for your Up-Coming Interview or Exam with us</p>
   <footer class="blockquote-footer">Trusted by Lots of Companies!</footer>

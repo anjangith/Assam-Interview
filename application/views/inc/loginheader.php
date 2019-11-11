@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-
 	<title>Assam Preparation</title>
   <script src="<?php echo base_url('assets/js/jquery-3.4.1.min.js'); ?>"></script>
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>" />
@@ -15,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">A-Prepare</a>
+  <a class="navbar-brand" href="#">Assam-Prepare</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

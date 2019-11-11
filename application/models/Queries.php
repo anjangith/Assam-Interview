@@ -15,6 +15,13 @@
       }
     }
 
+    public function getSections($id){
+      $sections = $this->db->where(['c_id'=>$id])->get('sections');
+      if($sections->num_rows()>0){
+        return $sections->result();
+      }
+    }
+
     public function registerAdmin($data){
       return $this->db->insert('users',$data);
     }
@@ -48,16 +55,6 @@
       }
 
   }
-
-public function viewAllColleges(){
-  $this->db->select(['tbl_users.user_id','tbl_college.college_id','tbl_users.user_name','tbl_users.email','tbl_users.gender','tbl_college.collegename',
-  'tbl_college.branch','tbl_roles.role_name']);
-  $this->db->from('tbl_college');
-  $this->db->join('tbl_users','tbl_users.college_id = tbl_college.college_id');
-  $this->db->join('tbl_roles','tbl_roles.role_id=tbl_users.role_id');
-  $users=$this->db->get();
-  return $users->result();
-}
 
 
   public function registerCoAdmin($data){
@@ -93,5 +90,29 @@ public function viewAllColleges(){
   public function removeStudent($id){
     return $this->db->delete('tbl_student',['id'=>$id]);
   }
+
+  public function getCName($id){
+    $category = $this->db->where(['c_id'=>$id])->get('category');
+    if($category->num_rows()>0){
+      return $category->row();
+    }
+  }
+
+  public function getQuestions()
+    	{
+        $category =  $this->uri->segment(3);
+        $section =  $this->uri->segment(4);
+        $this->db->where(['c_id'=>$category,'s_id'=>$section]);
+    		$this->db->select("q_no, question, option1, option2, option3, option4, answer");
+    		$this->db->from("quiz");
+    		$query = $this->db->get();
+    		return $query->result();
+    		$num_data_returned = $query->num_rows;
+
+    		if ($num_data_returned < 1) {
+    		  echo "There is no data in the database";
+    		  exit();
+    		}
+    	}
 }
  ?>

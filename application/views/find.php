@@ -17,6 +17,13 @@
 </div>
 </div>
 
+<div class="card mt-3 text-center col-md-12 col-xs-12" style="width: 20rem;">
+<div class="card-body">
+  <h5 class="card-title">My Courses</h5>
+  <a href="#" class="btn btn-primary">VIEW</a>
+</div>
+</div>
+
 
 
     </div>
@@ -75,7 +82,7 @@
       </div>
 
 
-    <h3 class="display-2">Top Students</h3>
+    <h3 class="display-4 text-center">Top Students</h3>
     <div id="country_table"></div>
     <div align="right" id="pagination_link"></div>
 
